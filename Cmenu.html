@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú - 8 Cepas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url("imagenes/bg.png");
+      background-size: cover;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(255, 102, 0, 0.9);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .header-buttons {
+      background: #fff3e0;
+      color: #993e01;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .header-buttons:hover {
+      background-color: #ff9800;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .logo a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8em;
+      color: #fffaf3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff3e0;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    main {
+      padding: 60px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 3em;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        background-color: rgba(255, 102, 0, 0.6);
+        border: 2px solid #ffae00;
+        border-radius: 12px;
+        padding: 10px 20px;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 10px;
+    }
+
+    .grid-menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+
+        .card {
+        animation: fadeIn 0.6s ease;
+        background-color: rgba(255, 102, 0, 0.781);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(4px);
+        }
+
+        .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+        }
+
+        h1, h2 {
+        animation: fadeIn 1s ease forwards;
+        opacity: 0;
+        }
+
+        h2:nth-of-type(1) { animation-delay: 0.2s; }
+        h2:nth-of-type(2) { animation-delay: 0.4s; }
+        h2:nth-of-type(3) { animation-delay: 0.6s; }
+        h2:nth-of-type(4) { animation-delay: 0.8s; }
+
+        h1 {
+        animation-delay: 0s;
+        }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 1.5em;
+      color: #fff8f0;
+    }
+
+    .card p {
+      font-size: 1em;
+      color: #f8f8f8;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ffeaa7;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+   <header>
+    <a href="menu.html".html"><button class="header-buttons"><img src="imagenes/header.png" width="20" height="20">Inicio</button></a>
+    <a href="Cmenu.html"><button class="header-buttons"><img src="imagenes/menu.png" width="20" height="20">Menú</button></a>
+    <a href="nosotros.html"><button class="header-buttons"><img src="imagenes/nosotros.png" width="20" height="20">Nosotros</button></a>
+    <a href="contactos.html"><button class="header-buttons"><img src="imagenes/contacto.png" width="20" height="20">Contacto</button></a>
+  </header>
+
+  <main>
+    <h1>Menú Peruano</h1>
+
+    <!-- ENTRADAS -->
+    <h2>Entradas</h2>
+    <div class="grid-menu">
+      <div class="card">
+        <img src="https://www.huleymantel.com/uploads/s1/49/39/29/fotos-variadas-luis-miguel-anon-13.webp" alt="Ceviche Clásico">
+        <h3>Ceviche Clásico</h3>
+        <p>Pescado fresco marinado en limón, con cebolla y camote.</p>
+        <div class="price">S/ 25.00</div>
+      </div>
+
+      <div class="card">
+        <img src="https://resizer.glanacion.com/resizer/v2/papas-a-la-XSHZH7X5ZJFNHCFJI3YQCGNMOY.jpg?auth=0728df3f6912f07c1553b71029692e7c86fa1751c4bdb1cbece26cc31c0fa008&width=1200&height=738&quality=70&smart=true" alt="Papa a la Huancaína">
+        <h3>Papa a la Huancaína</h3>
+        <p>Papas en salsa cremosa de ají amarillo y queso fresco.</p>
+        <div class="price">S/ 16.00</div>
+      </div>
+    </div>
+
+    <!-- PLATOS PRINCIPALES -->
+    <h2>Platos Principales</h2>
+    <div class="grid-menu">
+      <div class="card">
+        <img src="imagenes/lomo.png" alt="Lomo Saltado">
+        <h3>Lomo Saltado</h3>
+        <p>Salteado de carne, cebolla, tomate y papas fritas.</p>
+        <div class="price">S/ 28.00</div>
+      </div>
+
+      <div class="card">
+        <img src="https://imagenes.elpais.com/resizer/v2/FPKN2NFO7BBC7NQBAOKALTZM4M.jpg?auth=4da1571a11c5ffce1995f11e0319efa11a0610dc96dac47efd1a9ddf1567834f&width=1960&height=1470&smart=true" alt="Ají de Gallina">
+        <h3>Ají de Gallina</h3>
+        <p>Guiso de pollo con crema de ají amarillo, queso y nuez.</p>
+        <div class="price">S/ 22.00</div>
+      </div>
+
+      <div class="card">
+        <img src="https://puertovelero.net/wp-content/uploads/2020/07/TACU-TACU-LOMO-SALTADO.jpg" alt="Tacu Tacu con Lomo">
+        <h3>Tacu Tacu con Lomo</h3>
+        <p>Frejoles con arroz dorado servido con lomo al jugo.</p>
+        <div class="price">S/ 30.00</div>
+      </div>
+
+      <div class="card">
+        <img src="https://comedera.com/wp-content/uploads/sites/9/2022/03/Anticucho-shutterstock_185287433.jpg" alt="Anticuchos">
+        <h3>Anticuchos</h3>
+        <p>Brochetas de corazón de res marinadas a la parrilla.</p>
+        <div class="price">S/ 18.00</div>
+      </div>
+    </div>
+
+    <!-- POSTRES -->
+    <h2>Postres</h2>
+    <div class="grid-menu">
+      <div class="card">
+        <img src="https://comedera.com/wp-content/uploads/sites/9/2022/06/Mazamorra-morada-shutterstock_1530917543.jpg" alt="Mazamorra morada">
+        <h3>Mazamorra Morada</h3>
+        <p>Postre tradicional a base de maíz morado, frutas y canela.</p>
+        <div class="price">S/ 10.00</div>
+      </div>
+
+      <div class="card">
+        <img src="https://www.recetasnestle.com.pe/sites/default/files/srh_recipes/6458c5dfff3606c63d0212a0b6b7a738.jpg" alt="Arroz con Leche">
+        <h3>Arroz con Leche</h3>
+        <p>Arroz cremoso cocido con leche, canela y clavo de olor.</p>
+        <div class="price">S/ 10.00</div>
+      </div>
+    </div>
+
+    <!-- BEBIDAS -->
+    <h2>Bebidas</h2>
+    <div class="grid-menu">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6P1bpkgGU-ULZIQg3CwMIPuq9U4fyHAoaBQ&s" alt="Chicha Morada">
+        <h3>Chicha Morada</h3>
+        <p>Bebida refrescante de maíz morado, piña y canela.</p>
+        <div class="price">S/ 8.00</div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/pisco-sour-44f6c3b.jpg?resize=1366,1241" alt="Pisco Sour">
+        <h3>Pisco Sour</h3>
+        <p>Cóctel peruano con pisco, limón, clara de huevo y amargo.</p>
+        <div class="price">S/ 15.00</div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

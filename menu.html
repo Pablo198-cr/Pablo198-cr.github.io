@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>8 Cepas - Restaurante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      background: url("imagenes/bg.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(255, 102, 0, 0.9);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .header-buttons {
+      background: #fff3e0;
+      color: #993e01;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .header-buttons:hover {
+      background-color: #ff9800;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 3.5em;
+      color: #fff8f0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #ffe3c2;
+      margin-top: 15px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background-color: rgba(255, 102, 0, 0.85);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    
+    .hero-title-box {
+    display: inline-block;
+    border: 3px solid #ffffff;
+    padding: 20px 40px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease;
+    }
+
+    .hero-title-box h1 {
+    margin: 0;
+    font-size: 3.5em;
+    color: #fff8f0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    .contacto {
+    background-color: rgba(255, 102, 0, 0.85);
+    padding: 60px 20px;
+    margin-top: 80px;
+    text-align: center;
+    }
+
+    .contacto-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 245, 235, 0.1);
+    border: 2px solid #fff3e0;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+    color: #fffaf0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    backdrop-filter: blur(5px);
+    }
+
+    .contacto-box h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    }
+
+    .contacto-box p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    }
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    main .card:nth-child(1) { animation-delay: 0.2s; }
+    main .card:nth-child(2) { animation-delay: 0.4s; }
+    main .card:nth-child(3) { animation-delay: 0.6s; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="PWA.html"><button class="header-buttons"><img src="imagenes/header.png" width="20" height="20">Inicio</button></a>
+    <a href="Cmenu.html"><button class="header-buttons"><img src="imagenes/menu.png" width="20" height="20">Menú</button></a>
+    <a href="nosotros.html"><button class="header-buttons"><img src="imagenes/nosotros.png" width="20" height="20">Nosotros</button></a>
+    <a href="contactos.html"><button class="header-buttons"><img src="imagenes/contacto.png" width="20" height="20">Contacto</button></a>
+  </header>
+
+    <section class="hero">
+    <div class="hero-title-box">
+        <h1>8 Cepas</h1>
+    </div>
+    <p>Disfruta de lo mejor de la gastronomía peruana, pescados, mariscos y vinos en un ambiente único al aire libre.</p>
+    </section>
+
+
+  <main>
+    <div class="card">
+      <h1>Lomo Saltado</h1>
+      <img src="imagenes/lomo.png" alt="Lomo Saltado">
+      <p>Jugosa carne salteada con verduras frescas, papas crocantes y un toque de salsa de soya peruana.</p>
+    </div>
+
+    <div class="card">
+      <h1>Pizza Artesanal</h1>
+      <img src="imagenes/pizza2.png" alt="Pizza">
+      <p>Hecha al horno con ingredientes frescos: salsa casera, masa crocante y quesos seleccionados.</p>
+      <ul>
+        <li>La mejor pizza</li>
+        <li>Estilo artesanal</li>
+        <li>Ingredientes locales</li>
+      </ul>
+    </div>
+    
+</main>
+<section class="contacto">
+        <div class="contacto-box">
+            <h2>Contáctenos</h2>
+            <p>¿Tienes dudas o deseas reservar una mesa?<br>Llámanos al <strong>922 098 411</strong> o visítanos en nuestro local.</p>
+        </div>
+    </section>  
+  <footer>
+    © 2025 8 Cepas - Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
